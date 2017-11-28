@@ -1,9 +1,10 @@
-class CompaniesController < ApplicationController
+class CompaniesController < ProtectedController
   before_action :set_company, only: [:show, :update, :destroy]
 
   # GET /companies
   def index
-    @companies = Company.all
+    # @companies = Company.all
+    @companies = current_user.companies.all
 
     render json: @companies
   end
@@ -15,7 +16,8 @@ class CompaniesController < ApplicationController
 
   # POST /companies
   def create
-    @company = Company.new(company_params)
+    # @company = Company.new(company_params)
+    @company = current_user.companies.build(company_params)
 
     if @company.save
       render json: @company, status: :created, location: @company
@@ -41,7 +43,8 @@ class CompaniesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company
-      @company = Company.find(params[:id])
+      # @company = Company.find(params[:id])
+      @company = current_user.companies.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
