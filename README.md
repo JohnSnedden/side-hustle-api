@@ -1,6 +1,11 @@
 # Square Toast - API
 
-This repo project is an API and database for a simple Point of Sale (POS) system. A second repo exists for a corresponding web client
+This repo project is an API and database for a simple Point of Sale (POS) system. A second repo exists for a corresponding web client.
+https://github.com/JohnSnedden/side-hustle
+
+## Deployed sites:
+https://johnsnedden.github.io/side-hustle/
+https://side-hustle.herokuapp.com/
 
 ## Background
 
